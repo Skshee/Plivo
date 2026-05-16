@@ -226,7 +226,7 @@ def action_choice():
     elif digits == '2':
         # Forward call
         response.add_speak("Forwarding your call.", language="en-US", voice="Polly.Joanna")
-        dial = plivoxml.DialElement()
+        dial = plivoxml.DialElement(callerId=PLIVO_NUMBER)
         dial.add(plivoxml.NumberElement(FORWARD_NUMBER))
         response.add(dial)
     else:
